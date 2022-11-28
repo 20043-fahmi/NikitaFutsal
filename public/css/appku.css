@@ -1,0 +1,255 @@
+/* Util */
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.bg-red-500 {
+    background-color: #db1b1bfe !important;
+}
+
+/* End of Util  */
+
+/* Dekstop */
+.navbar {
+    transition: 0.5s;
+    background-color: rgb(36, 36, 36);
+}
+
+#navbar {
+    padding: 1.2rem 0.5rem;
+}
+
+#navfont {
+    font-size: 1rem;
+}
+
+#logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1600) {
+    #navbar {
+        padding: 2.2rem 0.5rem;
+    }
+
+    #logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    #navfont {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 400px) {
+    .navbar {
+        background-color: #1c1c1cfe;
+    }
+
+    #navbar {
+        padding: 0.6em 0.5em;
+    }
+
+    rem #navfont {
+        font-size: 1rem;
+    }
+
+    #logo {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* div.container.container-navbar {
+    width: 90%;
+} */
+
+.navbar p {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+}
+
+.navbar button {
+    background-color: #e16363;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+ul .dropdown-menu {
+    background-color: black;
+}
+
+
+.carousel-item {
+    max-height: 100vh;
+    height: 100%;
+}
+
+.img-carousel {
+    opacity: 0.5;
+    height: 100%;
+}
+
+.dark {
+    background-color: black;
+}
+
+.container.c-1 {
+    margin-top: 4em;
+}
+
+.container.ibra {
+    background-image: url('../images/Jumbotron\ Ibra.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+footer {
+    margin-top: 4.5em;
+}
+
+.carousel.slide {
+    height: fit-content;
+}
+
+.produck-dashboard,
+.detail-dashboard {
+    margin-top: 3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.detail-dashboard {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 4rem;
+}
+
+.produck-dashboard {
+    margin-bottom: 4rem;
+}
+
+
+/* Profile */
+div.bg-white {
+    /* margin-top: 4rem !important; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+/* .wrapper {
+    margin-top: auto;
+    margin-bottom: auto;
+} */
+
+.col {
+    float: left;
+    width: 50%;
+    background-color: white;
+    padding-top: 2rem;
+    /* height: 100vh; */
+}
+
+
+.row {
+    /* height: 96vh; */
+    content: '';
+    display: table;
+    clear: both;
+    background-color: white;
+    padding-bottom: 2rem;
+}
+
+.col-modal {
+    width: 80%;
+}
+
+.wrapper {
+    margin-top: 3rem;
+}
+
+.wrapper-modal {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 2rem;
+}
+
+
+
+.col-img {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+}
+
+img.col-img {
+    image-rendering: auto;
+}
+
+/* Box */
+.border {
+    height: 4rem;
+}
+
+p {
+    margin: 0rem !important;
+}
+
+@media only screen and (max-width: 400px) {
+    .col.col-modal {
+        height: 76vh;
+    }
+
+    div.row {
+        /* height: auto; */
+        height: 76vh;
+        content: none;
+        display: flex;
+        margin-top: 4rem;
+        /* height: 90vh;
+        content: '';
+        display: table;
+        clear: both; */
+
+        background-color: white;
+    }
+
+    div.col.col-img {
+        display: none;
+        visibility: hidden;
+    }
+
+
+
+    .min-h-screen {
+        height: 0vh !important;
+    }
+}
+
+/* Detail */
+.base {
+    padding-top: 3rem;
+}
+
+.overflow-y {
+    overflow-x: hidden;
+}
+
+.detail-container {
+    width: 50%;
+}
+
+footer {
+    bottom: 0;
+}
