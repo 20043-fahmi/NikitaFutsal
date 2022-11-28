@@ -33,8 +33,8 @@
           <img src="images/Carousel1.png" class="d-block img-carousel w-100" alt="...">
         </div>
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h5>Futsal First</h5>
+          <p>Lepaskan penat mingguan, kumpul di Nikita!</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -42,8 +42,8 @@
           <img src="images/Carousel2.png" class="d-block img-carousel w-100" alt="...">
         </div>
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h5>Fasilitas Lengkap</h5>
+          <p>Nikita Futsal memiliki semua perlengkapan yang kalian perlukan</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -51,8 +51,8 @@
           <img src="images/Carousel.png" class="d-block img-carousel w-100" alt="...">
         </div>
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h5>Jadi Messi atau Ronaldo?</h5>
+          <p>Tunggu apa lagi? Buruan booking lapangan di Nikita Futsal Magelang!</p>
         </div>
       </div>
     </div>

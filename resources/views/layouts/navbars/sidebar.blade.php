@@ -4,7 +4,7 @@
 -->
     <div class="logo">
         <a href="{{url('')}}" class="simple-text logo-normal">
-            {{ __('NeoFutsal') }}
+            {{ __('Nikita Futsal') }}
         </a>
     </div>
     <div class="sidebar-wrapper" id="sidebar-wrapper">
