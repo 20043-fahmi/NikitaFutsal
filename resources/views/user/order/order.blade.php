@@ -1,63 +1,75 @@
 @extends('theme.theme')
 @section('title','Checkout')
 @section('content')
-<div class="mt-2 pb-3 mb-2 border-b flex justify-between items-center">
-    <h1 class="text-md text-dark font-semibold">Review Order</h1>
-    <a href="#" onclick="return window.history.go(-1)" class="py-2 text-xs font-medium text-gray-500"><i
-            class="fas fa-xs fa-arrow-left"></i> Kembali</a>
-</div>
-<div id="description" class="my-3">
-    <p>
-        <i class="fas mr-2 fa-futbol"></i> {{$field->name}} (Rp. {{number_format($field->price)}} / jam)
-    </p>
-    <p><i class="fas mr-2 fa-calendar"></i> {{$dateReadable}}</p>
-    <p><i class="fas mr-2 fa-clock"></i> {{$schedule->start_at}} - {{$schedule->end_at}} WIB ({{$hours}} jam)</p>
-</div>
-<h1 class="text-md text-dark font-semibold border-b-2 pb-3 mb-2">Informasi Harga</h1>
-<form action="{{route('booking',['field'=>$field->id])}}" method="post">
-    @csrf
-    <input type="hidden" name="schedule" value="{{request()->schedule}}">
-    <div class="w-full mb-3">
-        <label>Pilih Jenis Pembayaran</label>
-        <input type="hidden" name="transaction_type_id" value="1" id="transaction_type">
-        <div class="flex justify-between space-x-2">
-            <div class="active payment-radio" data-id="1">
-                <p class="text-xl icon"><i class="fas fa-xs fa-check-circle"></i></p>
-                <p class="font-medium">Down Payment 50%</p>
+
+<div class="wrapper base">
+    <div class="container detail-container">
+        <div class="row">
+            <div class="mt-2 pb-3 mb-2 border-b flex justify-between items-center">
+                <h1 class="text-md text-dark font-semibold">Review Order</h1>
+                <a href="#" onclick="return window.history.go(-1)" class="py-2 text-xs font-medium text-gray-500"><i
+                        class="fas fa-xs fa-arrow-left"></i> Kembali</a>
             </div>
-            <div class="payment-radio" data-id="2">
-                <p class="text-xl icon"><i class="far fa-xs fa-circle"></i></p>
-                <p class="font-medium">Bayar Full</p>
+            <div id="description" class="my-3">
+                <p>
+                    <i class="fas mr-2 fa-futbol"></i> {{$field->name}} (Rp. {{number_format($field->price)}} / jam)
+                </p>
+                <p><i class="fas mr-2 fa-calendar"></i> {{$dateReadable}}</p>
+                <p><i class="fas mr-2 fa-clock"></i> {{$schedule->start_at}} - {{$schedule->end_at}} WIB ({{$hours}} jam)</p>
+            </div>
+            <h1 class="text-md text-dark font-semibold border-b-2 pb-3 mb-2">Informasi Harga</h1>
+    
+            <div class="col">
+                <form action="{{route('booking',['field'=>$field->id])}}" method="post">
+                    @csrf
+                    <input type="hidden" name="schedule" value="{{request()->schedule}}">
+                    <div class="w-full mb-3">
+                        <label>Pilih Jenis Pembayaran</label>
+                        <input type="hidden" name="transaction_type_id" value="1" id="transaction_type">
+                        <div class="flex justify-between space-x-2">
+                            <div class="active payment-radio" data-id="1">
+                                <p class="text-xl icon"><i class="fas fa-xs fa-check-circle"></i></p>
+                                <p class="font-medium">Down Payment 50%</p>
+                            </div>
+                            <div class="payment-radio" data-id="2">
+                                <p class="text-xl icon"><i class="far fa-xs fa-circle"></i></p>
+                                <p class="font-medium">Bayar Full</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full mb-3">
+                        <label>Pilih Metode Pembayaran</label>
+                        <select name="payment_type_id" class="form-select bg-white">
+                            <option value="" selected disabled>Pilih Metode Pembayaran</option>
+                            @foreach ($paymentTypes as $type)
+                            <option value="{{$type->id}}">{{$type->bank_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="w-full mb-3">
+                        <div class="flex justify-between mb-3">
+                            <p>Harga Sewa</p>
+                            <p>{{$hours}} x Rp. {{number_format($field->price)}}</p>
+                        </div>
+                        <div class="flex justify-between mb-3">
+                            <p>Total</p>
+                            <p id="total">Rp. {{number_format($priceTotal)}}</p>
+                        </div>
+                        <div class="flex justify-between mb-3 border-t border-gray-400">
+                            <p>DP</p>
+                            <p class="text-success text-2xl" id="dp">Rp. {{number_format($downPayment)}}</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-gray transition duration-500" disabled>
+                        Booking
+                    </button>
+                </form>
             </div>
         </div>
     </div>
-    <div class="w-full mb-3">
-        <label>Pilih Metode Pembayaran</label>
-        <select name="payment_type_id" class="form-select bg-white">
-            <option value="" selected disabled>Pilih Metode Pembayaran</option>
-            @foreach ($paymentTypes as $type)
-            <option value="{{$type->id}}">{{$type->bank_name}}</option>
-            @endforeach
-        </select>
-    </div>
-    <div class="w-full mb-3">
-        <div class="flex justify-between mb-3">
-            <p>Harga Sewa</p>
-            <p>{{$hours}} x Rp. {{number_format($field->price)}}</p>
-        </div>
-        <div class="flex justify-between mb-3">
-            <p>Total</p>
-            <p id="total">Rp. {{number_format($priceTotal)}}</p>
-        </div>
-        <div class="flex justify-between mb-3 border-t border-gray-400">
-            <p>DP</p>
-            <p class="text-success text-2xl" id="dp">Rp. {{number_format($downPayment)}}</p>
-        </div>
-    </div>
-    <button type="submit" class="btn-gray transition duration-500" disabled>
-        Booking
-    </button>
-</form>
+</div>
+
+
 
 @endsection
 @section('css')
