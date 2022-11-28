@@ -254,6 +254,6 @@ p {
     width: 50%;
 }
 
-footer {
+div.container.footer {
     bottom: 0;
 }
