@@ -68,16 +68,16 @@
                                 <p> {{ __("Rekap Order") }} </p>
                             </a>
                         </li>
-                        <li class="@if ($activePage == 'income') active @endif">
+                        <!-- <li class="@if ($activePage == 'income') active @endif">
                             <a href="{{route('admin.income.index')}}">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <p> {{ __("Pendapatan") }} </p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
-            <li class="@if ($activePage == 'setting') active @endif">
+            <!-- <li class="@if ($activePage == 'setting') active @endif">
                 <a href="#">
                     <i class="fas fa-calendar-alt"></i>
                     <p>{{ __('Jadwal Futsal') }}</p>
@@ -88,7 +88,7 @@
                     <i class="fas fa-cogs"></i>
                     <p>{{ __('Pengaturan') }}</p>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
