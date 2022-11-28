@@ -32,7 +32,7 @@
                 <div class="card card-login card-plain">
                     <div class="card-header ">
                         <div class="logo-container" style="width: 20vw">
-                            <img src="{{ asset('images/logo-neofutsal.png') }}" alt="Logo Neofutsal">
+                            <!-- <img src="{{ asset('images/logo-neofutsal.png') }}" alt="Logo Neofutsal"> -->
                         </div>
                     </div>
                     <div class="card-body ">
