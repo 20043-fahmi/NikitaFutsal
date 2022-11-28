@@ -16,7 +16,7 @@
                     @csrf
                     <div class="mb-3">
                         <label>Email</label>
-                        <input type="email" class="bg-gray-100" name="email" placeholder="Email Anda" value="user@neofutsal.id">
+                        <input type="email" class="bg-gray-100" name="email" placeholder="Email Anda" value="user@nikitafutsal.id">
                     </div>
                     <div class="mb-3">
                         <div class="flex justify-between mb-2">
