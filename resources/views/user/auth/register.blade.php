@@ -1,18 +1,18 @@
 @extends('theme.theme')
 @section('title','Daftar')
 @section('content')
-<div class="mt-5 h-full align-middle flex justify-center items-center flex-col">
+<div class="min-vh-100 mt-5 mb-5 h-full align-middle flex justify-center items-center flex-col">
     <div class=" bg-white shadow-xl px-4 py-4 rounded-lg w-full md:max-w-sm">
         <h1 class="text-3xl text-dark font-extrabold text-center">Daftar</h1>
         <form action="{{route('register')}}" method="post" id="formRegister">
             @csrf
             <div class="mb-3">
                 <label>Nama Lengkap</label>
-                <input type="text" class="bg-gray-100" name="name" placeholder="Irwan Antonio">
+                <input type="text" class="bg-gray-100" name="name" placeholder="MPPL C05">
             </div>
             <div class="mb-3">
                 <label>Email</label>
-                <input type="email" class="bg-gray-100" name="email" placeholder="irwan@neofutsal.id">
+                <input type="email" class="bg-gray-100" name="email" placeholder="nopal@nikitafutsal.id">
             </div>
             <div class="mb-3">
                 <label class="block">WhatsApp</label>

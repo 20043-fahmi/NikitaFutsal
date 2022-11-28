@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@neofutsal.id',
+            'email' => 'admin@nikitafutsal.id',
             'email_verified_at' => now(),
             'password' => Hash::make('neofutsal'),
             'created_at' => now(),
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name' => 'User',
-            'email' => 'user@neofutsal.id',
+            'email' => 'user@nikitafutsal.id',
             'email_verified_at' => now(),
             'password' => Hash::make('neofutsal'),
             'created_at' => now(),
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name' => 'Fahmi',
-            'email' => 'fahmi@neofutsal.id',
+            'email' => 'fahmi@nikitafutsal.id',
             'email_verified_at' => now(),
             'password' => Hash::make('qwerty123'),
             'created_at' => now(),
