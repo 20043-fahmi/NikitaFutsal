@@ -49,7 +49,7 @@
             <p>{{$hours}} x Rp. {{number_format($field->price)}}</p>
         </div>
         <div class="flex justify-between mb-3">
-            <p>Total</p>
+            <p>Total Biaya</p>
             <p id="total">Rp. {{number_format($priceTotal)}}</p>
         </div>
         <div class="flex justify-between mb-3 border-t border-gray-400">
