@@ -1,6 +1,8 @@
 @extends('theme.theme')
 @section('title','Checkout')
 @section('content')
+
+<div class="mt-5 p-5 min-vh-100">
 <div class="mt-2 pb-3 mb-2 border-b flex justify-between items-center">
     <h1 class="text-md text-dark font-semibold">Review Order</h1>
     <a href="#" onclick="return window.history.go(-1)" class="py-2 text-xs font-medium text-gray-500"><i
@@ -14,6 +16,7 @@
     <p><i class="fas mr-2 fa-clock"></i> {{$schedule->start_at}} - {{$schedule->end_at}} WIB ({{$hours}} jam)</p>
 </div>
 <h1 class="text-md text-dark font-semibold border-b-2 pb-3 mb-2">Informasi Harga</h1>
+
 <form action="{{route('booking',['field'=>$field->id])}}" method="post">
     @csrf
     <input type="hidden" name="schedule" value="{{request()->schedule}}">
@@ -54,10 +57,11 @@
             <p class="text-success text-2xl" id="dp">Rp. {{number_format($downPayment)}}</p>
         </div>
     </div>
-    <button type="submit" class="btn-gray transition duration-500" disabled>
+    <button type="submit" class="btn-gray transition duration-500">
         Booking
     </button>
 </form>
+</div>
 
 @endsection
 @section('css')
