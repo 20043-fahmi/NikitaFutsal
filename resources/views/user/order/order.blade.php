@@ -2,66 +2,74 @@
 @section('title','Checkout')
 @section('content')
 
-<div class="mt-5 p-5 min-vh-100">
-<div class="mt-2 pb-3 mb-2 border-b flex justify-between items-center">
-    <h1 class="text-md text-dark font-semibold">Review Order</h1>
-    <a href="#" onclick="return window.history.go(-1)" class="py-2 text-xs font-medium text-gray-500"><i
-            class="fas fa-xs fa-arrow-left"></i> Kembali</a>
+<div class="wrapper base">
+    <div class="container detail-container">
+        <div class="row">
+            <div class="mt-2 pb-3 mb-2 border-b flex justify-between items-center">
+                <h1 class="text-md text-dark font-semibold">Review Order</h1>
+                <a href="#" onclick="return window.history.go(-1)" class="py-2 text-xs font-medium text-gray-500"><i
+                        class="fas fa-xs fa-arrow-left"></i> Kembali</a>
+            </div>
+            <div id="description" class="my-3">
+                <p>
+                    <i class="fas mr-2 fa-futbol"></i> {{$field->name}} (Rp. {{number_format($field->price)}} / jam)
+                </p>
+                <p><i class="fas mr-2 fa-calendar"></i> {{$dateReadable}}</p>
+                <p><i class="fas mr-2 fa-clock"></i> {{$schedule->start_at}} - {{$schedule->end_at}} WIB ({{$hours}} jam)</p>
+            </div>
+            <h1 class="text-md text-dark font-semibold border-b-2 pb-3 mb-2">Informasi Harga</h1>
+    
+            <div class="col">
+                <form action="{{route('booking',['field'=>$field->id])}}" method="post">
+                    @csrf
+                    <input type="hidden" name="schedule" value="{{request()->schedule}}">
+                    <div class="w-full mb-3">
+                        <label>Pilih Jenis Pembayaran</label>
+                        <input type="hidden" name="transaction_type_id" value="1" id="transaction_type">
+                        <div class="flex justify-between space-x-2">
+                            <div class="active payment-radio" data-id="1">
+                                <p class="text-xl icon"><i class="fas fa-xs fa-check-circle"></i></p>
+                                <p class="font-medium">Down Payment 50%</p>
+                            </div>
+                            <div class="payment-radio" data-id="2">
+                                <p class="text-xl icon"><i class="far fa-xs fa-circle"></i></p>
+                                <p class="font-medium">Bayar Full</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full mb-3">
+                        <label>Pilih Metode Pembayaran</label>
+                        <select name="payment_type_id" class="form-select bg-white">
+                            <option value="" selected disabled>Pilih Metode Pembayaran</option>
+                            @foreach ($paymentTypes as $type)
+                            <option value="{{$type->id}}">{{$type->bank_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="w-full mb-3">
+                        <div class="flex justify-between mb-3">
+                            <p>Harga Sewa</p>
+                            <p>{{$hours}} x Rp. {{number_format($field->price)}}</p>
+                        </div>
+                        <div class="flex justify-between mb-3">
+                            <p>Total</p>
+                            <p id="total">Rp. {{number_format($priceTotal)}}</p>
+                        </div>
+                        <div class="flex justify-between mb-3 border-t border-gray-400">
+                            <p>DP</p>
+                            <p class="text-success text-2xl" id="dp">Rp. {{number_format($downPayment)}}</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-gray transition duration-500" disabled>
+                        Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="description" class="my-3">
-    <p>
-        <i class="fas mr-2 fa-futbol"></i> {{$field->name}} (Rp. {{number_format($field->price)}} / jam)
-    </p>
-    <p><i class="fas mr-2 fa-calendar"></i> {{$dateReadable}}</p>
-    <p><i class="fas mr-2 fa-clock"></i> {{$schedule->start_at}} - {{$schedule->end_at}} WIB ({{$hours}} jam)</p>
-</div>
-<h1 class="text-md text-dark font-semibold border-b-2 pb-3 mb-2">Informasi Harga</h1>
 
-<form action="{{route('booking',['field'=>$field->id])}}" method="post">
-    @csrf
-    <input type="hidden" name="schedule" value="{{request()->schedule}}">
-    <div class="w-full mb-3">
-        <label>Pilih Jenis Pembayaran</label>
-        <input type="hidden" name="transaction_type_id" value="1" id="transaction_type">
-        <div class="flex justify-between space-x-2">
-            <div class="active payment-radio" data-id="1">
-                <p class="text-xl icon"><i class="fas fa-xs fa-check-circle"></i></p>
-                <p class="font-medium">Down Payment 50%</p>
-            </div>
-            <div class="payment-radio" data-id="2">
-                <p class="text-xl icon"><i class="far fa-xs fa-circle"></i></p>
-                <p class="font-medium">Bayar Full</p>
-            </div>
-        </div>
-    </div>
-    <div class="w-full mb-3">
-        <label>Pilih Metode Pembayaran</label>
-        <select name="payment_type_id" class="form-select bg-white">
-            <option value="" selected disabled>Pilih Metode Pembayaran</option>
-            @foreach ($paymentTypes as $type)
-            <option value="{{$type->id}}">{{$type->bank_name}}</option>
-            @endforeach
-        </select>
-    </div>
-    <div class="w-full mb-3">
-        <div class="flex justify-between mb-3">
-            <p>Harga Sewa</p>
-            <p>{{$hours}} x Rp. {{number_format($field->price)}}</p>
-        </div>
-        <div class="flex justify-between mb-3">
-            <p>Total Biaya</p>
-            <p id="total">Rp. {{number_format($priceTotal)}}</p>
-        </div>
-        <div class="flex justify-between mb-3 border-t border-gray-400">
-            <p>DP</p>
-            <p class="text-success text-2xl" id="dp">Rp. {{number_format($downPayment)}}</p>
-        </div>
-    </div>
-    <button type="submit" class="btn-gray transition duration-500">
-        Booking
-    </button>
-</form>
-</div>
+
 
 @endsection
 @section('css')
@@ -70,12 +78,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/themes/default.css"
     integrity="sha512-x9ZSPqJJfUhtPuo+fw6331wHeC3vhDpNI3Iu4KC05zJrxx7MWYewaDaASGxAUgWyrwU50oFn6Xk0CrQnTSuoOA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/themes/default.date.css"
+    integrity="sha512-Ix4qjGzOeoBtc8sdu1i79G1Gxy6azm56P4z+KFl+po7kOtlKhYSJdquftaI4hj1USIahQuZq5xpg7WgRykDJPA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/themes/default.time.css"
+    integrity="sha512-OVCdZvsw/MeYx12cD+0Cmw/TA5Iw3bJXM4dpSIxXmDK3X5erHyETXkB3OGqnNQ72sL4UOuyTH9kdWds2MGYcBQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 @section('js')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 {{-- pickdate js --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/picker.js"
     integrity="sha512-VQa5Pmc87GQrifaBaI+ejCQBHkca6yhwKH+iFihubE4Mf3NSj0jVN3cppGHPlFSa2MRmAD7xwuZ8fr9DOHUsgw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/picker.date.js"
+    integrity="sha512-4UAypxd5+OVqRf2SeJTnkd+W47HoLnpHjwannVikXGsgJxH2Hl+SBDM9UYyi+3hpNc16aaGeOu5RvesbSwlRlA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/picker.time.js"
+    integrity="sha512-j3HVwMQuwEYegEnNfKlQ/paV3/b7TB4/Ul9bYIjBKiwbIXGQ/mzs3H+wqfvNo/7mKtNXUZnQWHDj3xNrNNA/7w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{-- Languge ID --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.4/translations/id_ID.js"

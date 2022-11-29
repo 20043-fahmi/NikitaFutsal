@@ -3,7 +3,6 @@
 @section('content')
 <div class="wrapper base">
 
-
 <div class="container detail-container">
 <div class=" detail-images flex justify-between {{ $imageExist ? 'space-x-2' : 'flex-col' }} mb-3" id="images">
     <div class="{{ $imageExist ? 'w-2/3' : 'w-full' }}">
@@ -19,7 +18,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row row-60">
     <h1 class="text-md text-black font-semibold border-b-2 pb-3 mb-2">Informasi Lapangan</h1>
 
     <div class="col">
