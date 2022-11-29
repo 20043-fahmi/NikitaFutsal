@@ -1,4 +1,12 @@
 /* Util */
+* {
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+}
+
 .mb-4 {
     margin-bottom: 4rem;
 }
@@ -119,8 +127,16 @@ ul .dropdown-menu {
     background-size: contain;
 }
 
+.footer-container {
+    padding-top: 1.4rem;
+}
+
 footer {
-    margin-top: 4.5em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .carousel.slide {
@@ -172,6 +188,7 @@ div.bg-white {
     display: table;
     clear: both;
     background-color: white;
+    margin-bottom: 2rem;
     padding-bottom: 2rem;
 }
 
@@ -254,6 +271,6 @@ p {
     width: 50%;
 }
 
-div.container.footer {
-    bottom: 0;
+.wrapper-card {
+    height: 100vh;
 }

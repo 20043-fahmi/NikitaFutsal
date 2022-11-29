@@ -20,7 +20,7 @@
     {{-- Navbar --}}
     @include('theme.navbar')
     {{-- End Navbar --}}
-    <div class="mx-auto bg-gray-100 rounded-md  overflow-hidden">
+    {{-- <div class="mx-auto bg-gray-100 rounded-md  overflow-hidden"> --}}
         {{-- min-h-screen --}}
         {{-- Content --}}
         <div id="content" class="relative">
@@ -30,15 +30,22 @@
             
             {{-- End of Content --}}
         </div>
-    </div>
+    {{-- </div> --}}
 {{-- Footer --}}
-<div class="container footer">
-    <footer class="justify-content-between align-items-center py-3 my-4 border-top">
+<div class="container footer-container">
+    <footer class="align-items-center border-top">
       <p class="col-md-4 mb-0 text-muted">&copy; 2022 Nikita Futsal</p>
-  
       <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
       </a>
+  
+      {{-- <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul> --}}
     </footer>
   </div>
 {{-- End of Footer --}}
