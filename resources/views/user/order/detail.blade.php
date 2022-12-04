@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="row row-60">
+<div class="row row-60 title">
     <h1 class="text-md text-black font-semibold border-b-2 pb-3 mb-2">Informasi Lapangan</h1>
 
     <div class="col">
