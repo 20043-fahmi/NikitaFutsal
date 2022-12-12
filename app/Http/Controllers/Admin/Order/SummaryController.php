@@ -86,31 +86,30 @@ class SummaryController extends Controller
     public function destroy($id)
     {
     }
-    
-    
-    public function datatable(){
-        $query = Order::with(['user:id,name','futsal_field:id,name','status_transaction:id,name_admin']);
+
+
+    public function datatable()
+    {
+        $query = Order::with(['user:id,name', 'futsal_field:id,name', 'status_transaction:id,name_admin']);
         return DataTables::eloquent($query)
-        ->editColumn('total',function($query){
-            return ($query->hours * $query->price);
-        })
-        ->editColumn('play_date',function($query){
-            return Carbon::parse($query->play_date)->locale('id')->translatedFormat('l, d F Y');
-        })
-        ->editColumn('start_at', function($query){
-            return Carbon::parse($query->start_at)->format('H:i');
-        })
-        ->editColumn('end_at',function($query){
-            return Carbon::parse($query->end_at)->format('H:i');
-        })
-        ->editColumn('created_at', function($query){
-            return Carbon::parse($query->created_at)->locale('id')->translatedFormat('l, d F Y | H:i')." WIB";
-        })
-        ->editColumn('updated_at', function($query){
-            return Carbon::parse($query->updated_at)->locale('id')->diffForHumans();
-        })
-        ->make(true)
-        ;
-        
+            ->editColumn('total', function ($query) {
+                return ($query->hours * $query->price);
+            })
+            ->editColumn('play_date', function ($query) {
+                return Carbon::parse($query->play_date)->locale('id')->translatedFormat('l, d F Y');
+            })
+            ->editColumn('start_at', function ($query) {
+                return Carbon::parse($query->start_at)->format('H:i');
+            })
+            ->editColumn('end_at', function ($query) {
+                return Carbon::parse($query->end_at)->format('H:i');
+            })
+            ->editColumn('created_at', function ($query) {
+                return Carbon::parse($query->created_at)->locale('id')->translatedFormat('l, d F Y | H:i') . " WIB";
+            })
+            ->editColumn('updated_at', function ($query) {
+                return Carbon::parse($query->updated_at)->locale('id')->diffForHumans();
+            })
+            ->make(true);
     }
 }

@@ -3,19 +3,18 @@
 @section('content')
 <div class="wrapper">
     <div class="row">
-
         <div class="col col-img">
             <img src="{{asset('images/Jumbotron Ibra.png')}}" class="ibra">
         </div>
 
-        <div class=" col col-modal">
+        <div class=" col">
             <div class="px-2 py-4 bg-white rounded wrapper-modal">
                 <div class="flex justify-end">
                     <a href="{{route('app.profile.edit')}}" class="-mt-2 text-sm text-gray-500">
                         <i class="fas fa-pen"></i> Edit
                     </a>
                 </div>
-                <div class="mx-auto rounded-full bg-primary w-20 h-20 flex justify-center items-center overflow-hidden">
+                <div class="mx-auto rounded-full bg-primary w-20 flex justify-center items-center overflow-hidden">
                     {{-- <span class="text-4xl text-white"><i class="fas fa-camera"></i></span> --}}
                     <img src="https://www.pngarts.com/files/11/Avatar-PNG-Transparent-Image.png" alt="Foto Profile" class="object-cover">
                 </div>

@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Admin\Order;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
+use App\Models\Transaction;
+use Carbon\Carbon;
+use Exception;
+use Helpers;
+use Illuminate\Support\Facades\Validator;
 
 class IncomeController extends Controller
 {
@@ -14,7 +20,8 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        return view('admin.order.income.index');
+        $data = DB::table('transactions')->get();
+        return view('admin.order.income.index', compact('data'));
     }
 
     /**
@@ -24,7 +31,11 @@ class IncomeController extends Controller
      */
     public function create()
     {
-        //
+        $income = DB::table('transactions')
+            ->select('transactions.amount')
+            ->sum('transactions.amount')
+            ->get();
+        return view('admin.dashboard.index', compact('income'));
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('theme.theme')
 @section('title','Transaksi')
 @section('content')
-<div class="wrapper wrapper-card">
+
         <div class="my-3 flex justify-between items-center space-x-0">
             <div class="order-flex">
                 <a href="{{route('app.transaction')}}">Order</a>
@@ -13,6 +13,6 @@
         <div id="transaction">
             <x-transaction-card></x-transaction-card>
         </div> 
-</div>
+
 
 @endsection
