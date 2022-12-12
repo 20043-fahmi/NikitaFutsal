@@ -76,6 +76,8 @@ Route::prefix('admin')->group(function () {
 Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('home');
+
+    // Route::get('/', [IncomeController::class, 'create']);
     // Master
     Route::group(['prefix' => 'master', 'name' => 'master.'], function () {
         // Pengguna Route | customer
@@ -84,7 +86,7 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'as' => 'admin.
             Route::post('/', [UserController::class, 'store'])->name('user.store');
             Route::get('create', [UserController::class, 'create'])->name('user.create');
             Route::patch('update/{user}', [UserController::class, 'update']);
-            Route::delete('delete/{user}',[UserController::class,'destroy']);
+            Route::delete('delete/{user}', [UserController::class, 'destroy']);
         });
         // Ball Route | ball
         Route::get('balls', [BallController::class, 'index'])->name('ball.index');
@@ -135,18 +137,18 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'as' => 'admin.
             Route::patch('edit/{income}', [IncomeController::class, 'update']);
         });
     });
-    Route::patch('transaction/update/{transaction}',[OrderTransactionController::class,'update'])->name('transaction.update');
+    Route::patch('transaction/update/{transaction}', [OrderTransactionController::class, 'update'])->name('transaction.update');
 
-    
+
     Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
-Route::group(['middleware'=>'auth.admin','prefix'=>'api','as'=>'api.'],function(){
+Route::group(['middleware' => 'auth.admin', 'prefix' => 'api', 'as' => 'api.'], function () {
     //JSON
-    Route::get('json/ball/{ball}',[BallController::class,'json'])->name('json.ball');
-    Route::get('json/payment-type/{payment}',[PaymentTypeController::class,'json'])->name('json.payment');
-    Route::get('json/transaction/{transaction}',[OrderTransactionController::class,'json'])->name('json.transaction');
-    Route::get('json/user/{user}',[UserController::class,'json'])->name('json.user');
-    
+    Route::get('json/ball/{ball}', [BallController::class, 'json'])->name('json.ball');
+    Route::get('json/payment-type/{payment}', [PaymentTypeController::class, 'json'])->name('json.payment');
+    Route::get('json/transaction/{transaction}', [OrderTransactionController::class, 'json'])->name('json.transaction');
+    Route::get('json/user/{user}', [UserController::class, 'json'])->name('json.user');
+
     // Datatable
-    Route::get('datatable/orders',[SummaryController::class,'datatable'])->name('orders');
+    Route::get('datatable/orders', [SummaryController::class, 'datatable'])->name('orders');
 });

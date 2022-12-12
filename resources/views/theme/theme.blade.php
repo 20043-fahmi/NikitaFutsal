@@ -20,7 +20,7 @@
     {{-- Navbar --}}
     @include('theme.navbar')
     {{-- End Navbar --}}
-    <div class="mx-auto bg-gray-100 rounded-md overflow-hidden">
+    <div class="mx-auto rounded-md overflow-hidden">
         {{-- min-h-screen --}}
         {{-- Content --}}
         <div id="content" class="relative">
@@ -33,7 +33,7 @@
     </div>
 {{-- Footer --}}
 
-    <footer class="align-items-center border-top">
+    <footer id="footer" class="align-items-center border-top" style="bottom: 0 !important; clear: both; position: relative;">
         <div>
             <p class="">&copy; 2022 Nikita Futsal</p>
         </div>
@@ -41,9 +41,7 @@
 
 {{-- End of Footer --}}
 
-{{--  --}}
 
-{{--  --}}
     {{-- <script src="{{asset("js/appku.js")}}"></script> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

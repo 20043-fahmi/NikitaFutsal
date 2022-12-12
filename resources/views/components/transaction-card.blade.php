@@ -1,3 +1,6 @@
+
+<div class="wrapper">
+<div class="container">
 <div class="card-transaction">
     {{-- Header --}}
     <div class="card-header">
@@ -17,11 +20,11 @@
         </div>
         <div class="flex justify-between items-center">
             <p class="font-medium"> Status </p>
-            {{-- <span> --}}
+            <span class="status">
                 <p class="py-1 px-3 text-white text-xs font-medium p-padding {{ $order->status_transaction->color }} rounded-md">
                     {{ $order->status_transaction->name_user }}
                 </p>
-            {{-- </span> --}}
+            </span>
         </div>
         <div class="flex justify-between items-center">
             <p class="font-medium">
@@ -37,6 +40,7 @@
         <div class="flex-auto">
             <a href="{{ url("transaction/order/{$order->id}") }}" class="btn-primary block">Transaksi</a>
         </div>
-
     </div>
+</div>
+</div> 
 </div>
