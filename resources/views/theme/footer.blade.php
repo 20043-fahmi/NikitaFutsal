@@ -1,7 +1,6 @@
-@extends('theme.theme')
-@section('footer')
+
 <footer class="footer">
-    <div class=" container-fluid ">
+    <div class=" container" style="background-color:white;">
         <div class="copyright" id="copyright">
             &copy;
             <script>
@@ -12,4 +11,3 @@
     </div>
 </footer>
     
-@endsection

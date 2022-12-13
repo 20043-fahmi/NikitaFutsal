@@ -2,7 +2,7 @@
 @section('title','Login')
 @section('content')
 <div class="wrapper">
-<div class="row">
+<div class="row mt-5">
 
     <div class="col col-img">
         <img src="{{asset('images/Jumbotron Ibra.png')}}" class="ibra">

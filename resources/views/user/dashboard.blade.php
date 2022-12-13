@@ -31,6 +31,9 @@
       <div class="carousel-item active overflow-hidden">
         <div class="dark">
           <img src="images/Carousel1.png" class="d-block img-carousel w-100" alt="...">
+          <div class="centered">
+              @include('asset.buttonJTR')
+          </div>
         </div>
         <div class="carousel-caption d-none d-md-block">
           <h5 class="overflow-hidden">Futsal First</h5>
@@ -40,6 +43,9 @@
       <div class="carousel-item overflow-hidden">
         <div class="dark">
           <img src="images/Carousel2.png" class="d-block img-carousel w-100" alt="...">
+          <div class="centered">
+            @include('asset.buttonJTR')
+          </div>
         </div>
         <div class="carousel-caption overflow-hidden">
           <h5 class="overflow-hidden">Fasilitas Lengkap</h5>
@@ -49,6 +55,9 @@
       <div class="carousel-item overflow-hidden">
         <div class="dark">
           <img src="images/Carousel.png" class="d-block img-carousel w-100" alt="...">
+          <div class="centered">
+            @include('asset.buttonJTR')
+          </div>
         </div>
         <div class="carousel-caption d-none d-md-block">
           <h5 class="overflow-hidden">Jadi Messi atau Ronaldo?</h5>
@@ -68,8 +77,8 @@
   <!-- {{-- End Carousel --}} -->
   
 {{-- End of Slider --}}
-<div class="produck-dashboard ">
-  <h1 class="text-md text-dark font-semibold border-b-2 pb-3 ">Booking Now!</h1>
+<div class="produck-dashboard" id="Booking">
+  <h1 class="text-md text-dark font-semibold border-b-2 pb-3 " >Booking Now!</h1>
   <div class="my-3 grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4 auto-rows-max ">
       @foreach ($futsal_fields as $field)
       <x-product-card :field="$field" />

@@ -1,9 +1,8 @@
 @extends('theme.theme')
 @section('title','Booking Online Futsal')
 @section('content')
-<div class="wrapper base">
-
-<div class="container detail-container">
+<div class="wrapper">
+<div class="container detail-container mt-6">
 <div class=" detail-images flex justify-between {{ $imageExist ? 'space-x-2' : 'flex-col' }} mb-3" id="images">
     <div class="{{ $imageExist ? 'w-2/3' : 'w-full' }}">
         <img src="{{ asset($field->img) }}" class="object-cover rounded w-full h-32 md:h-64 transition-all duration-300" id="previewImg" alt="Foto Lapangan Futsal">
