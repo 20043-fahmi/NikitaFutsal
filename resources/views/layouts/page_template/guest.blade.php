@@ -2,6 +2,6 @@
     @include('layouts.navbars.navs.guest')
     <div class="full-page register-page section-image" filter-color="black" data-image="{{ $backgroundImage }}">
         @yield('content')
-        @include('layouts.footer')
+        {{-- @include('layouts.footer') --}}
     </div>
 </div>

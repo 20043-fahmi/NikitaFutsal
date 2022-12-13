@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,11 +32,16 @@
     </div>
 {{-- Footer --}}
 
-    <footer id="footer" class="align-items-center border-top" style="bottom: 0 !important; clear: both; position: relative;">
+    {{-- <footer id="footer" class="align-items-center border-top" style="bottom: 0 !important; clear: both; position: relative;">
         <div>
             <p class="">&copy; 2022 Nikita Futsal</p>
         </div>
-    </footer>
+    </footer> --}}
+{{-- 
+    <div class=" footer align-items-center border-top" style="bottom: 0px; position:relative; width:100%;">
+        Goblog
+    </div> --}}
+    @include('theme.footer')
 
 {{-- End of Footer --}}
 

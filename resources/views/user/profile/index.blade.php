@@ -1,13 +1,13 @@
 @extends('theme.theme')
 @section('title','My Profile')
 @section('content')
-<div class="wrapper">
-    <div class="row">
+<div class="wrapper" >
+    <div class="row mt-5">
         <div class="col col-img">
             <img src="{{asset('images/Jumbotron Ibra.png')}}" class="ibra">
         </div>
 
-        <div class=" col">
+        <div class=" col " style="">
             <div class="px-2 py-4 bg-white rounded wrapper-modal">
                 <div class="flex justify-end">
                     <a href="{{route('app.profile.edit')}}" class="-mt-2 text-sm text-gray-500">
