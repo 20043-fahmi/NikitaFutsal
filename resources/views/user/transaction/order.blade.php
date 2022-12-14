@@ -6,8 +6,6 @@
     <div class="container">
         <div class="row">
             <div class="col">
-    
-
                 <div class="bg-white shadow-lg px-3 py-2 rounded">
                     <div class="flex justify-between items-center mb-3">
                         <h1 class="font-bold text-xl text-gray-600">

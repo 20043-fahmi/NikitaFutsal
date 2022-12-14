@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+
 class Transaction extends Model
 {
     use HasFactory;
@@ -46,22 +47,23 @@ class Transaction extends Model
      * @param integer $paymentType
      * @return string|null
      */
-    public function uploadPayment($file){
-        try{
+    public function uploadPayment($file)
+    {
+        try {
             $paymentType = $this->attributes['transaction_type_id'];
             $oldFile = $this->attributes['proof_file'];
             if (Storage::exists("public/$oldFile")) {
                 Storage::delete("public/$oldFile");
             }
             $ext = $file->extension();
-            $type = ($paymentType == 1 ? 'down-payment':'full');
-            $filename = auth()->user()->id."-".Str::random(30).".".$ext;
-            $fullPath = "payment/{$type}/{$filename}";
-            $file->storeAs("public",$fullPath);
-            $this->update(['proof_file' => "storage/$fullPath"]);
+            $type = ($paymentType == 1 ? 'down-payment' : 'full');
+            $filename = auth()->user()->id . "-" . Str::random(30) . "." . $ext;
+            $fullPath = "images/payment/{$type}/{$filename}";
+            $file->storeAs("public", $fullPath);
+            $this->update(['proof_file' => $fullPath]);
             $this->touch();
             return true;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             return false;
         }
     }

@@ -3,6 +3,16 @@
 
 /* Util */
 
+@media only screen and (max-width: 400px) {
+    .mt-8 {
+        margin-top: 5rem !important;
+    }
+
+    .row {
+        margin-top: 0 !important;
+    }
+}
+
 .fs-2px {
     font-size: 0.8em;
 }
@@ -12,6 +22,8 @@
 }
 
 .card {
+    margin-left: auto;
+    margin-right: auto;
     min-width: 16rem !important;
     max-width: 16rem;
     border: none !important;
@@ -274,9 +286,9 @@ img.col-img {
 }
 
 /* Box */
-.border {
+/* .border {
     height: 4rem;
-}
+} */
 
 p {
     margin: 0rem !important;
@@ -347,6 +359,12 @@ p {
     position: relative;
 }
 
+/* Order */
+.col.orderHistory {
+    display: flex;
+    flex: 0 0 0% !important;
+}
+
 /* btnJtr */
 @media only screen and (max-width:400px) {
     .cta {
@@ -375,7 +393,6 @@ p {
     display: flex;
     padding: 10px 45px;
     text-decoration: none;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background: #6225E6;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
@@ -402,10 +419,6 @@ p {
 .cta:hover span.visibility {
     transition: 0.5s;
     margin-right: 45px;
-}
-
-span {
-    transform: skewX(15deg)
 }
 
 span.visibility {

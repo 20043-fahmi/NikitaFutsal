@@ -82,58 +82,6 @@
     </div>
 </div>
 @endsection
-@push('modal')
-<div class="modal fade" id="modalFilter" tabindex="-1" role="dialog" aria-labelledby="modalFormTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalFormTitle">Filter</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" id="filterForm">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group mb-3">
-                                <label>Jenis Transaksi</label>
-                                <select name="transaction_type_id" class="form-control">
-                                    <option value="">Pilih Jenis Transaksi</option>
-                                    <option value="1">Down Payment</option>
-                                    <option value="2">Pelunasan</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <label>Rentang Tanggal Transaksi</label>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group mb-3">
-                                <label>Tanggal Mulai</label>
-                                <input type="date" name="" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group mb-3">
-                                <label>Tanggal Selesai</label>
-                                <input type="date" name="" class="form-control">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-round btn-primary">
-                            Filter
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@endpush
 @push('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 <style>

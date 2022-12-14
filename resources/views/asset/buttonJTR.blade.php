@@ -1,6 +1,6 @@
 <div class="wrapper-btnJtr">
     <a class="cta" href="#Booking">
-        <span class="" style="color:white;">Booking Now!</span>
+        <span style="color:white; font-family:'Poppins'">Booking Now!</span>
         <span class="visibility">
           <svg  class="btnSvg" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
