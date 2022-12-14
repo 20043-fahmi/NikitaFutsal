@@ -19,7 +19,7 @@
                     </p>
                 @else
                     @foreach ($orders as $order)
-                    <div class="col">
+                    <div class="col orderHistory">
                         <div class="card">
                             <x-transaction-card :order="$order"></x-transaction-card>
                         </div>

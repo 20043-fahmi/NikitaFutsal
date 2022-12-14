@@ -17,7 +17,7 @@ class TransactionController extends Controller
     {
         $orders = Order::where([
             'user_id' => auth()->user()->id
-        ])->orderByDesc("id")->paginate(5);
+        ])->orderByDesc("id")->paginate(6);
         return view('user.transaction.index', compact('orders'));
     }
     public function history()

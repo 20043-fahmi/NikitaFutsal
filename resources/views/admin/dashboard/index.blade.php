@@ -30,7 +30,7 @@
             <div class="card">
                 <div class="card-body">
                     <p class="lead">Pendapatan Bulan Ini</p>
-                    <p class="h4">Rp. {{$sevenDay}}</p>
+                    <p class="h4">Rp. {{$month}}</p>
                 </div>
             </div>
         </div>
@@ -50,26 +50,27 @@
                     <div class="table-responsive">
                         <table class="table table-bordered" id="tbl-orders">
                             <thead>
-                                <th></th>
+                                {{-- <th></th> --}}
                                 <th>Order ID</th>
                                 <th>Jenis Transaksi</th>
                                 <th>Jumlah Transaksi</th>
                                 <th>Bukti Pembayaran</th>
-                                <th>Tanggal</th>
+                                <th>TimeStamp</th>
                             </thead>
                             <tbody>
                                 @foreach ($index as $idx)
                                 <tr>
-                                    <td>
+                                    {{-- <td>
                                         <a href="#" class="btn btn-round btn-info" title="Lihat Detail">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                    </td>
+                                    </td> --}}
                                     <td><a href="#">#{{$idx ->order_id }}</a></td>
                                     <td><span class="badge badge-info">{{$idx->name}}</span></td>
                                     <td>Rp. {{$idx->amount }}</td>
-                                    <td><a href="{{ asset("storage/".$idx->proof_file) }}" target="_blank">Lihat</a></td>
-                                    <td>{{$idx->updated_at}} WIB</td>
+                                    {{-- <td><img src="{{asset('public/images/carousel.png')}}" alt=""> </td> --}}
+                                    <td><a href="{{ asset($idx->proof_file) }}" target="_blank">Lihat</a></td>
+                                    <td>{{$idx->created_at}} WIB</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -77,63 +78,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 @endsection
-@push('modal')
-<div class="modal fade" id="modalFilter" tabindex="-1" role="dialog" aria-labelledby="modalFormTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalFormTitle">Filter</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" id="filterForm">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group mb-3">
-                                <label>Jenis Transaksi</label>
-                                <select name="transaction_type_id" class="form-control">
-                                    <option value="">Pilih Jenis Transaksi</option>
-                                    <option value="1">Down Payment</option>
-                                    <option value="2">Pelunasan</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <label>Rentang Tanggal Transaksi</label>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group mb-3">
-                                <label>Tanggal Mulai</label>
-                                <input type="date" name="" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group mb-3">
-                                <label>Tanggal Selesai</label>
-                                <input type="date" name="" class="form-control">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-round btn-primary">
-                            Filter
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@endpush
 @push('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 <style>
