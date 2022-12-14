@@ -30,7 +30,7 @@
             <div class="card">
                 <div class="card-body">
                     <p class="lead">Pendapatan Bulan Ini</p>
-                    <p class="h4">Rp. {{$sevenDay}}</p>
+                    <p class="h4">Rp. {{$month}}</p>
                 </div>
             </div>
         </div>
@@ -50,26 +50,27 @@
                     <div class="table-responsive">
                         <table class="table table-bordered" id="tbl-orders">
                             <thead>
-                                <th></th>
+                                {{-- <th></th> --}}
                                 <th>Order ID</th>
                                 <th>Jenis Transaksi</th>
                                 <th>Jumlah Transaksi</th>
                                 <th>Bukti Pembayaran</th>
-                                <th>Tanggal</th>
+                                <th>TimeStamp</th>
                             </thead>
                             <tbody>
                                 @foreach ($index as $idx)
                                 <tr>
-                                    <td>
+                                    {{-- <td>
                                         <a href="#" class="btn btn-round btn-info" title="Lihat Detail">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                    </td>
+                                    </td> --}}
                                     <td><a href="#">#{{$idx ->order_id }}</a></td>
                                     <td><span class="badge badge-info">{{$idx->name}}</span></td>
                                     <td>Rp. {{$idx->amount }}</td>
-                                    <td><a href="{{ asset("storage/".$idx->proof_file) }}" target="_blank">Lihat</a></td>
-                                    <td>{{$idx->updated_at}} WIB</td>
+                                    {{-- <td><img src="{{asset('public/images/carousel.png')}}" alt=""> </td> --}}
+                                    <td><a href="{{ asset($idx->proof_file) }}" target="_blank">Lihat</a></td>
+                                    <td>{{$idx->created_at}} WIB</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -77,7 +78,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

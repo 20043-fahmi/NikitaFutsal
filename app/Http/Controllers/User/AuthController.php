@@ -71,6 +71,7 @@ class AuthController extends Controller
                 'email' => $validated['email'],
                 'password' => Hash::make($validated['password']),
                 'phone' => $validated['phone'],
+                'created_at' => now(),
             ];
             if (User::insert($user)) {
                 return response()->json(['success' => true, 'message' => 'Akun telah dibuat']);
